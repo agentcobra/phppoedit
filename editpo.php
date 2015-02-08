@@ -185,11 +185,11 @@
     </tr>
   </table>
 
-  <p>
+  <div class="alert alert-info" role="alert">
     NOTE! This system <em>requires</em> UTF-8 character encoding.
     If you don't see some Japanese text here: "日本語",
     adjust your browser settings.
-  </p>
+  </div>
 
   </div>
 <p> </p>
@@ -236,7 +236,7 @@
     }
   }
 
-  print '<b>TRANSLATIONS: NOTE! You can ignore the first box (translation info, meta data etc).</b>';
+  print '<div class="alert alert-info" role="alert">TRANSLATIONS: NOTE! You can ignore the first box (translation info, meta data etc).</div>';
 
   print '<form action="' . htmlentities($_SERVER["REQUEST_URI"]) . '" method="post">' . "\n";
   print '<input type="hidden" name="save" value="1">' . "\n";
@@ -283,12 +283,12 @@
      </td>
    </tr>
 <?php
-    print "</table><p> </p>\n";
+    print "</table>\n";
   }
 ?>
 
   Password (for user '<?php print htmlentities($user); ?>'): <input type="password" value="<?php if (isset($_POST["pass"])) print $_POST["pass"]; ?>" name="pass" /><br />
-  <input type="submit" value="Save all">
+  <input type="submit" class="btn btn-primary" value="Save all">
   </form>
 
 </body>

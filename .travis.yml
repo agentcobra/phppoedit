@@ -1,0 +1,6 @@
+language: ruby
+install:
+    - npm install bootlint
+script:
+    - bootlint index.php
+    - bootlint editpo.php
