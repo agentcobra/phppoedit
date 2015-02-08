@@ -22,117 +22,142 @@
 // NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-  header( "Content-Type: text/html; charset=UTF-8");
 
-  require_once("config.inc");
-  require_once("utils.inc");
-  require_once("poparse.inc");
+require_once("config.inc");
+require_once("utils.inc");
+require_once("poparse.inc");
 
-  forceNoCache();
-
-  print '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+forceNoCache();
 ?>
-<!DOCTYPE html
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Translate '<?php print_encoded($project_name);  ?>' - PHPPOEdit</title>
 
-<head>
-  <title>Translate '<?php print_encoded($project_name);  ?>' - PHPPOEdit</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-<body>
-<h1><?php print_encoded($project_name);  ?> translations</h1>
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-<p style="border: 1px gray dotted;">
-    NOTE! This system <em>requires</em> UTF-8 character encoding.
-    If you don't see some Japanese text (or plain squares) here: "日本語",
-    adjust your browser settings.
-</p>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+        <style>
+            footer.well{
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
 
-<?php
+    <body>
+        <h1><?php print_encoded($project_name);  ?> translations</h1>
 
-  $pot_files = array_map(
+        <div class="alert alert-info" role="alert">
+            NOTE! This system <em>requires</em> UTF-8 character encoding.
+            If you don't see some Japanese text (or plain squares) here: "日本語",
+            adjust your browser settings.
+        </div>
+        <?php
+
+$pot_files = array_map(
     create_function('$t', 'return str_replace("pot/", "", $t);'),
     my_glob( "pot/*.pot" ));
 
-  $lang_dirs = array_map(
+$lang_dirs = array_map(
     create_function('$t', 'return str_replace("po/", "", $t);'),
     my_glob( "po/*", GLOB_ONLYDIR ));
-
-  print "<p>Languages:</p><ul>";
-  foreach( $lang_dirs as $l )
-  {
+        ?>
+        <h2>Languages:</h2>
+        <ul class="list-inline">
+            <?php
+foreach( $lang_dirs as $l )
+{
     printf ("<li><a href='#%s'>%s</a></li>\n", xhtml_encode($l), xhtml_encode(ucfirst($l)));
-  }
-  print "</ul>";
+}
+            ?>
+        </ul>
+        <div class="container">
+            <?php
+foreach( $lang_dirs as $l )
+{
+    print '<h3 id="'. htmlentities($l) .'">' . xhtml_encode(ucfirst($l)) . '</h3>';
 
-
-  foreach( $lang_dirs as $l )
-  {
-    print "<a name='" . htmlentities($l) . "' /><h2>" . xhtml_encode(ucfirst($l)) . "</h2>\n";
-
-?>
-  <table border="1">
-  <tr>
-    <td><strong>Filename</strong></td>
-    <td><strong>Translated</strong></td>
-    <td><strong>..of which fuzzy</strong></td>
-    <td><strong>total strings</strong></td>
-  </tr>
-<?php
+            ?>
+            <table class="table table-bordered table-hover table-striped">
+               <thead>
+                <tr>
+                    <th>Filename</th>
+                    <th>Translated</th>
+                    <th>..of which fuzzy</th>
+                    <th>total strings</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
 
     foreach( $pot_files as $pot )
     {
-      $parsed_pot = parse_po(file( "pot/$pot" ));
+        $parsed_pot = parse_po(file( "pot/$pot" ));
 
-      print '<tr>';
-      $po = "po/$l/" . str_replace('.pot', '.po', $pot);
-      if ( file_exists( $po ))
-      {
-        $parsed_po = parse_po(file( $po ));
-        $total = 0; $translated = 0; $fuzzy = 0;
-        foreach( $parsed_pot as $checksum => $entry )
+        print '<tr>';
+        $po = "po/$l/" . str_replace('.pot', '.po', $pot);
+        if ( file_exists( $po ))
         {
-          if ( strlen($entry["msgid"] ))
-          {
-            $total++;
-            if ( isset($parsed_po[$checksum]))
+            $parsed_po = parse_po(file( $po ));
+            $total = 0; $translated = 0; $fuzzy = 0;
+            foreach( $parsed_pot as $checksum => $entry )
             {
-              if ( in_array('fuzzy', $parsed_po[$checksum]["flags"]))
-              {
-                $fuzzy++;
-                $translated++;
-              }
-              else if ( strlen($parsed_po[$checksum]["msgstr"]))
-                $translated++;
+                if ( strlen($entry["msgid"] ))
+                {
+                    $total++;
+                    if ( isset($parsed_po[$checksum]))
+                    {
+                        if ( in_array('fuzzy', $parsed_po[$checksum]["flags"]))
+                        {
+                            $fuzzy++;
+                            $translated++;
+                        }
+                        else if ( strlen($parsed_po[$checksum]["msgstr"]))
+                            $translated++;
+                    }
+                }
             }
-          }
+            debug($pot);
+            printf ("<td><a href='editpo.php?file=%s'><em>%s</em></a></td><td style='color: #%s'>%0.2f%%</td><td style='color: #%s'>%0.2f%%</td><td>%d</td>",
+                    htmlentities($po),
+                    str_replace('.pot', '.po', $pot),
+                    blend_colors( "008000", "FF0000", ($total>0) ? ($translated/$total) : 1 ),
+                    ($total>0) ? ($translated*100/$total) : 100,
+                    blend_colors( "008000", "FF0000", ($translated>0) ? (1-$fuzzy/$translated) : 1 ),
+                    ($translated>0) ? ($fuzzy*100/$translated) : 0,
+                    $total);
         }
-
-
-        printf ("<td><a href='editpo.php?file=%s'><em>%s</em></a></td><td style='color: #%s'>%0.2f%%</td><td style='color: #%s'>%0.2f%%</td><td>%d</td>",
-          htmlentities($po),
-          str_replace('.pot', '.po', $pot),
-          blend_colors( "008000", "FF0000", ($total>0) ? ($translated/$total) : 1 ),
-          ($total>0) ? ($translated*100/$total) : 100,
-          blend_colors( "008000", "FF0000", ($translated>0) ? (1-$fuzzy/$translated) : 1 ),
-          ($translated>0) ? ($fuzzy*100/$translated) : 0,
-          $total);
-      }
-      else
-      {
-        print "<strong>MISSING FILE " . xhtml_encode($po) . "</strong>\n";
-      }
-      print '</tr>';
+        else
+        {
+            print '<div class="alert alert-warning" role="alert">MISSING FILE ' . xhtml_encode($po) . '</div>';
+        }
+        print '</tr>';
     }
-    print "</table>\n";
-  }
-?>
+    print "</tbody></table>\n";
+}
+                ?>
+                </div><!--/.container-->
+            <footer class="well">
+                <p>Powered by <a href="http://iki.fi/elonen/code/phppoedit/">Phppoedit</a>.</p>
+            </footer>
 
-<hr/>
-<p>Powered by <a href="http://iki.fi/elonen/code/phppoedit/">Phppoedit</a>.</p>
-
-</body>
-</html>
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+            </body>
+        </html>
