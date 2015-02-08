@@ -101,5 +101,7 @@ function forceNoCache()
   header("Pragma: no-cache");                          // HTTP/1.0
 }
 
-
+function debug($var){
+ echo '<pre>'.print_r($var,TRUE).'</pre>';   
+}
 ?>
