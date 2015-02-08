@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR THE COPYRIGHT-HOLDER
+# This file is distributed under the same license as the SITE site.
+# FIRST AUTHOR <EMAIL ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SITE VERSION\n"
+"POT-Creation-Date: Sat, 23 Oct 2004 14:17:01 +0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL ADDRESS>\n"
+"Language-Team: LANGUAGE <LL li org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pophorator 0.12\n"
+
+#: start.html:25
+msgid ""
+"Leader of the Free World election offers you a total of <b>65 pre"
+"sidential candidates."
+msgstr ""
+
+#: start.html:27
+msgid "You have two alternative ways of voting."
+msgstr ""
+
+#: start.html:49
+msgid " Go directly to ballot-filling, <b>start with blank sheet"
+msgstr ""
+
+#: start.html:56
+msgid ""
+" Go to candidate matcher, <b> answer 10 questions </b> and let th"
+"e computer pre-fill the ballot for you."
+msgstr ""
+
