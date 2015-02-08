@@ -17,7 +17,9 @@ How to install:
 
 
 The MIT License (MIT)
-Copyright (c) 2004-2006 by Jarno Elonen <elonen@iki.fi> - 2015 by agentcobra <agentcobra@free.fr>
+
+Copyright (c) 2004-2006 by Jarno Elonen <elonen@iki.fi>
+Copyright (c) 2015 by agentcobra <agentcobra@free.fr>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
