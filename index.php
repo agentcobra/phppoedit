@@ -22,16 +22,9 @@
 // NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
-<<<<<<< HEAD
 require_once("config.inc.php");
 require_once("utils.inc.php");
 require_once("poparse.inc.php");
-=======
-require_once("config.inc");
-require_once("utils.inc");
-require_once("poparse.inc");
->>>>>>> f1b91f1b9c398ef4fc57892275adb631b9d972bd
 
 forceNoCache();
 ?>
