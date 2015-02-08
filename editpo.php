@@ -25,10 +25,10 @@
   header( "Content-Type: text/html; charset=UTF-8");
   header( "accept-charset: utf-8" );
 
-  require_once("config.inc");
-  require_once("utils.inc");
-  require_once("poparse.inc");
-  require_once("htpasswd.inc");
+  require_once("config.inc.php");
+  require_once("utils.inc.php");
+  require_once("poparse.inc.php");
+  require_once("htpasswd.inc.php");
 
   forceNoCache();
 
