@@ -76,10 +76,10 @@ function blend_colors( $a, $b, $mul )
 function my_glob ($pattern)
 {
     $path_parts = pathinfo ($pattern);
-    $pattern = '^' . str_replace (array ('*',  '?'), array ('(.+)', '(.)'), $path_parts['basename'] . '$');
+    $pattern = '/^' . str_replace (array ('*',  '?'), array ('(.+)', '(.)'), $path_parts['basename'] . '$/');
     $dir = opendir ($path_parts['dirname']);
     while ($file = readdir ($dir)) {
-        if ($file != "." && $file != ".." && ereg ($pattern, $file)) $result[] = "{$path_parts['dirname']}/$file";
+        if ($file != "." && $file != ".." && preg_match ($pattern, $file)){ $result[] = "{$path_parts['dirname']}/$file";}
     }
     closedir ($dir);
 
