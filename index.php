@@ -32,10 +32,8 @@
 
   print '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 ?>
-<!DOCTYPE html
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 
 <head>
   <title>Translate '<?php print_encoded($project_name);  ?>' - PHPPOEdit</title>
@@ -83,14 +81,12 @@
   </tr>
 <?php
 
-    foreach( $pot_files as $pot )
-    {
+    foreach( $pot_files as $pot ):
       $parsed_pot = parse_po(file( "pot/$pot" ));
 
-      print '<tr>';
+      ?><tr><?php
       $po = "po/$l/" . str_replace('.pot', '.po', $pot);
-      if ( file_exists( $po ))
-      {
+      if ( file_exists( $po )):
         $parsed_po = parse_po(file( $po ));
         $total = 0; $translated = 0; $fuzzy = 0;
         foreach( $parsed_pot as $checksum => $entry )
@@ -120,16 +116,12 @@
           blend_colors( "008000", "FF0000", ($translated>0) ? (1-$fuzzy/$translated) : 1 ),
           ($translated>0) ? ($fuzzy*100/$translated) : 0,
           $total);
-      }
-      else
-      {
-        print "<strong>MISSING FILE " . xhtml_encode($po) . "</strong>\n";
-      }
-      print '</tr>';
-    }
-    print "</table>\n";
-  }
-?>
+      else: ?>
+        <strong>MISSING FILE <?= xhtml_encode($po); ?></strong>
+      <?php endif; ?>
+      </tr>
+    <?php endforeach; ?>
+    </table>
 
 <hr/>
 <p>Powered by <a href="http://iki.fi/elonen/code/phppoedit/">Phppoedit</a>.</p>
