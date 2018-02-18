@@ -30,7 +30,6 @@
 
   forceNoCache();
 
-  print '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 ?>
 <!DOCTYPE html>
 <html>
@@ -70,7 +69,7 @@
   foreach( $lang_dirs as $l )
   {
     print "<a name='" . htmlentities($l) . "' /><h2>" . xhtml_encode(ucfirst($l)) . "</h2>\n";
-
+  }
 ?>
   <table border="1">
   <tr>
