@@ -12,7 +12,7 @@ matrix:
 
 install:
  - composer selfupdate
- - composer install
+ - composer install --dev
 
 
 script:
