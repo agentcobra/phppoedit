@@ -16,5 +16,5 @@ install:
 
 
 script:
- - ./vendor/bin/phpcs -s
+ - ./vendor/bin/phpcs -s  
  - ./vendor/bin/php-cs-fixer fix --diff --dry-run
