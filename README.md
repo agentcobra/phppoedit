@@ -2,7 +2,8 @@
 PHPPOEDIT 1.0
 
 This is a light-weight PHP based PO-file (gettext-file) editor.
-How to install:
+
+## How to install:
 
  + Copy the files to a website
  + Copy your .pot files to the pot/ directory
@@ -16,7 +17,7 @@ How to install:
 
 
 
-The MIT License (MIT)
+## The MIT License (MIT)
 
 Copyright (c) 2004-2006 by Jarno Elonen <elonen@iki.fi>
 Copyright (c) 2015 by agentcobra <agentcobra@free.fr>
