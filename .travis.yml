@@ -15,8 +15,8 @@ install:
  - composer install --dev
 
 script:
- - ./vendor/bin/phpcs -p ./ --standard=PHPCompatibility --runtime-set testVersion 5.4
- - ./vendor/bin/phpcs -s
+ - ./vendor/bin/phpcs -p --standard=PHPCompatibility --runtime-set testVersion 5.4 --ignore=vendor/* .
+ - ./vendor/bin/phpcs -s --ignore=vendor/* .
  - ./vendor/bin/php-cs-fixer fix --diff --dry-run
 
 before_deploy:
