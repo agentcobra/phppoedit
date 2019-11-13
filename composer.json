@@ -1,0 +1,21 @@
+{
+  "name": "agentcobra/phppoedit",
+  "description": "This is a light-weight PHP based PO-file (gettext-file) editor.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jarno Elonen",
+      "email": "elonen@iki.fi"
+    },
+    {
+      "name": "agentcobra",
+      "email": "agentcobra@free.fr"
+    }
+  ],
+  "require": {},
+  "require-dev": {
+    "squizlabs/php_codesniffer": "*",
+    "wimg/php-compatibility": "*",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4"
+  }
+}
