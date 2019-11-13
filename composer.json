@@ -15,7 +15,7 @@
   "require": {},
   "require-dev": {
     "squizlabs/php_codesniffer": "*",
-    "wimg/php-compatibility": "*",
+    "phpcompatibility/php-compatibility": "*",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4"
   }
 }
