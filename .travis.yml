@@ -13,8 +13,3 @@ matrix:
 install:
  - composer selfupdate
  - composer install --dev
-
-
-script:
- - ./vendor/bin/phpcs -s  
- - ./vendor/bin/php-cs-fixer fix --diff --dry-run

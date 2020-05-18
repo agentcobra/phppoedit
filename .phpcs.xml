@@ -3,7 +3,6 @@
     <description>The coding standard for Phppoedit</description>
 
     <file>.</file>
-
     <exclude-pattern>vendor</exclude-pattern>
 
     <arg name="basepath" value="."/>
