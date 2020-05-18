@@ -3,16 +3,29 @@
     "description": "a simple PHP based PO file editor",
     "type": "project",
     "license": "BSD",
-    "authors": [
+    "authors": [{
+            "name": "Jarno Elonen",
+            "email": "elonen@iki.fi",
+            "homepage": "https://elonen.iki.fi",
+            "role": "Creator"
+        },
         {
-            "name": "agentcobra",
-            "email": "agentcobra@free.fr"
+            "name": "Agentcobra",
+            "email": "agentcobra@free.fr",
+            "homepage": "http://agentcobra.online.fr",
+            "role": "Developer"
         }
     ],
     "require": {
         "phing/phing": "^2.16"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.2"
+        "squizlabs/php_codesniffer": "3.*",
+        "phpcompatibility/php-compatibility": "*"
+    },
+    "prefer-stable": true,
+    "scripts": {
+        "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+        "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
     }
 }
