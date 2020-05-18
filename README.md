@@ -1,4 +1,6 @@
 # phppoedit
+[![Build Status (master)](https://travis-ci.org/agentcobra/phppoedit.svg?branch=master)](https://travis-ci.org/agentcobra/phppoedit)
+[![Build Status (dev)](https://travis-ci.org/agentcobra/phppoedit.svg?branch=dev)](https://travis-ci.org/agentcobra/phppoedit)
 PHPPOEDIT 1.0
 
 This is a light-weight PHP based PO-file (gettext-file) editor.

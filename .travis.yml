@@ -13,6 +13,7 @@ matrix:
 install:
  - composer selfupdate
  - composer install --dev
+<<<<<<< HEAD
 
 script:
  - ./vendor/bin/phpcs -p --standard=PHPCompatibility --runtime-set testVersion 5.4 --ignore=vendor/* .
@@ -22,3 +23,5 @@ script:
 before_deploy:
 - composer install --no-dev
 - composer dump-autoload -o
+=======
+>>>>>>> develop
