@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phppoedit V1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-19 22:02+0100\n"
+"PO-Revision-Date: 2018-02-19 22:04+0100\n"
+"Last-Translator: agentcobra <agentcobra@free.fr>\n"
+"Language-Team: agentcobra\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: editpo.php:55
+msgid ""
+"Non-allowed filename; only the PO files in the correct directory are "
+"accepted."
+msgstr ""
+
+#: editpo.php:184
+msgid "Modifications saved."
+msgstr ""
+
+#: editpo.php:190
+msgid "Back to main page"
+msgstr "Retour à la page principale"
+
+#: editpo.php:195
+msgid "Legend:"
+msgstr "Légende : "
+
+#: editpo.php:198
+msgid "completed translation"
+msgstr ""
+
+#: editpo.php:201
+msgid "missing translation"
+msgstr ""
+
+#: editpo.php:204
+msgid "fuzzy/uncertain translation (e.g. automatically translated)"
+msgstr ""
+
+#: editpo.php:294
+msgid "from"
+msgstr "depuis"
+
+#: editpo.php:295
+msgid "note"
+msgstr "note"
+
+#: editpo.php:298
+msgid "translation info"
+msgstr "information de traduction"
+
+#: editpo.php:300
+msgid "meta data"
+msgstr ""
+
+#: editpo.php:302
+msgid "text"
+msgstr "texte"
+
+#: editpo.php:303
+msgid "translation"
+msgstr "traduction"
+
+#: editpo.php:304
+msgid "comments"
+msgstr "commentaires"
+
+#: editpo.php:321
+#, fuzzy
+msgid "fuzzy"
+msgstr "approximatif"
+
+#: editpo.php:332
+msgid "Save all"
+msgstr "Sauvegarder tout"
+
+#: index.php:91
+msgid "Filename"
+msgstr "Fichier"

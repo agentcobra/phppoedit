@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR THE COPYRIGHT-HOLDER
+# This file is distributed under the same license as the SITE site.
+# FIRST AUTHOR <EMAIL ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phppoedit v1\n"
+"POT-Creation-Date: Sat, 23 Oct 2004 14:17:01 +0300\n"
+"PO-Revision-Date: 2018-02-19 19:47+0100\n"
+"Last-Translator: agentcobra <agentcobra@free.fr>\n"
+"Language-Team: agentcobra\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pophorator 0.12\n"
+"Language: fr\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: start.html:25
+msgid ""
+"Leader of the Free World election offers you a total of <b>65 presidential candidates."
+msgstr ""
+"Le leader de l'élection du Monde Libre vous propose un total de <b> 65 candidats à la "
+"présidence."
+
+#: start.html:27
+#, fuzzy
+msgid "You have two alternative ways of voting."
+msgstr "Vous avez deux façons de voter."
+
+#: start.html:49
+msgid " Go directly to ballot-filling, <b>start with blank sheet"
+msgstr ""
+" Aller directement au remplissage des urnes, <b> commencer par une feuille vierge"
+
+#: start.html:56
+msgid ""
+" Go to candidate matcher, <b> answer 10 questions </b> and let the computer pre-fill "
+"the ballot for you."
+msgstr ""
+" Rendez-vous sur le selecteur decandidat, <b> répondez à 10 questions </ b> et laissez "
+"l'ordinateur pré-remplir le bulletin de vote pour vous."

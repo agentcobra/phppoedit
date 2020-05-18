@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-19 21:48+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: editpo.php:55
+msgid ""
+"Non-allowed filename; only the PO files in the correct directory are "
+"accepted."
+msgstr ""
+
+#: editpo.php:184
+msgid "Modifications saved."
+msgstr ""
+
+#: editpo.php:190
+msgid "Back to main page"
+msgstr ""
+
+#: editpo.php:195
+msgid "Legend:"
+msgstr ""
+
+#: editpo.php:198
+msgid "completed translation"
+msgstr ""
+
+#: editpo.php:201
+msgid "missing translation"
+msgstr ""
+
+#: editpo.php:204
+msgid "fuzzy/uncertain translation (e.g. automatically translated)"
+msgstr ""
+
+#: editpo.php:294
+msgid "from"
+msgstr ""
+
+#: editpo.php:295
+msgid "note"
+msgstr ""
+
+#: editpo.php:298
+msgid "translation info"
+msgstr ""
+
+#: editpo.php:300
+msgid "meta data"
+msgstr ""
+
+#: editpo.php:302
+msgid "text"
+msgstr ""
+
+#: editpo.php:303
+msgid "translation"
+msgstr ""
+
+#: editpo.php:304
+msgid "comments"
+msgstr ""
+
+#: editpo.php:332
+msgid "Save all"
+msgstr ""
+
+#: index.php:91
+msgid "Filename"
+msgstr ""
